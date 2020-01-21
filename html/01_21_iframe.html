@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+        body{
+            text-align: center;
+        }
+
+        .child{
+            width: 600px;
+            border: 1px solid red;
+            display: inline-block;
+            
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div>
+            <p class="child">취미 블로그로 공부하기</p>
+        </div>
+            <iframe src="https://hssm93.tistory.com/entry/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%8A%B8%EB%A7%81-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC%EB%B3%B5%EC%8A%B5"
+            width="700"
+            height="700"
+            name="FirstIF"></iframe>
+        <!-- iframe 제목을 반응형처럼 웹 브라우저의 크기를 변형 시켜도 계속 가운데 정렬을 유지하도록 하기 위해서 여러가지 방법을 시도
+            그러나 div태그 자체를 반응형처럼 만드는 것은 실패, 혹시 몰라 자식p태그만 id를 줘서 display: inline-block; 옵션을 추가하니 iframe과 동일하게 화면의 가운데로 정렬 성공
+        -->
+        </body>
+</html>

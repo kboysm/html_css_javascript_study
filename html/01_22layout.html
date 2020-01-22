@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>layout practice</title>
+        <style>
+            #header{
+                background-color: yellow;
+                width: 100%;
+                height: 25%;
+                text-align: center;
+                padding-top:5%;
+            }
+            #nav{
+                float: left;
+                width: 20%;
+                height: 50%;
+                background-color: violet;
+                text-align: center;
+                padding-top:5%;
+            }
+            #content{
+                background-color: greenyellow;
+                width: 80%;
+                height: 50%;
+                float: left;
+                text-align: center;
+                padding-top:5%;
+            }
+            #footer1{
+                float: left;
+                background-color: blue;
+                width: 100%;
+                height: 25%;
+                text-align: center;
+                padding-top:5%;
+            }
+            /*
+            float을 사용하다 보면 빈칸이 있으면 다음 요소에 빈칸이 들어가게 된다. 그러나 clear:both; 를 추가해주면 빈 칸을 채우지 않고 정상적으로 배치된다.
+            
+            */
+        </style>
+    </head>
+    <body>
+        <div id="header">header</div>
+        <div id="nav">nav</div>
+        <div id="content">content</div>
+        <div id="footer1">footer</div>
+    </body>
+</html>

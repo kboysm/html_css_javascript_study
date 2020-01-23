@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 두번째</title>
+        <!-- 여기에 자바스크립트를 선언하면 보디에 위치한 콘텐츠보다 먼저 실행되는 것이 보장된다.
+            안전하게 실행하려면 보디 맨 끝에 자바스크립트를 선언하는 것이 가장 좋다.
+        -->
+    </head>
+    <body>
+        <script>
+            let jsT ={model:"lsm" , color:"red" , hp:100};
+            let x=10;
+            let y=20;
+            let s;
+            s =100;
+            //////////////////////////////////////////////////////////
+            document.write(s+"<br>");
+            s="홍길동";
+            document.write(s+"<br>");
+            document.write(jsT.model + "<br>");
+            document.write(jsT.color + "<br>");
+            document.write(jsT.hp + "<br>");
+            document.write((x+y) +"<br>");
+            document.write((y-x) +"<br>");
+            document.write((x*y) +"<br>");
+            document.write((x/y) +"<br>");
+            document.write((y%x) +"<br>");
+            y=x++;
+            document.write(y +"<br>");
+            document.write(x +"<br>");
+            /*
+                자바스크립트 기본 자료형 :
+                1.수치형 : 정수,실수 
+                그냥 자료형:
+                1.객체형(object) : 객체를 나타내는 타입
+                2.undefined : 값이 정해지지 않은 상태를 나타낸다.
+            */
+        </script> 
+    </body>
+</html>

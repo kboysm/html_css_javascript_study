@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>html과 css를 사용해서 홈페이지 만들어보기</title>
-        
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
     <body>
         <header>
@@ -30,6 +30,12 @@
                 <li><a target="iframe1" href="computer.html">식품</a></li>
             </ul>
         </aside>
+
+        <section id="main">
+            <article id="article1">
+                <iframe name="iframe1" src="computer.html" width="1000" height="400" seamless></iframe>
+            </article>
+        </section>
         
         <aside id="right">
             <div id="shopcart">
@@ -49,12 +55,6 @@
                 </form>
             </div>
         </aside>
-
-        <section id="main">
-            <article id="article">
-                <iframe name="iframe1" src="computer.html" width="440" height="300" seamless></iframe>
-            </article>
-        </section>
         <footer>Copyright (C) 2013 Web Shop</footer>
     </body>
 </html>

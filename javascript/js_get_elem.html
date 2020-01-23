@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>style_javascript</title>
+    </head>
+    <body>
+        <script>
+            document.write('<h1 id="test">This a heading</h1>');
+            //개인적으로 test 해본 결과 이렇게 id를 선언해줘도 정상적으로 동작한다.
+            function func(){
+                e = document.getElementById("test");
+                e.style.color="red";
+                
+            }
+        </script>
+            <button type="button" onclick="func()">클릭</button>
+    </body>
+</html>

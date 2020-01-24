@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>setTimeout</title>
+    </head>
+    <body>
+        <div id="remaining"></div>
+        <script>
+             function datesUntilNewYear(){
+                 let now = new Date();
+                 let NewYear = new Date('January 1, '+(now.getFullYear()+1));
+                 let diff = NewYear - now;
+                 let milliseconds = Math.floor(diff % 1000);
+                 diff=diff/1000;
+                 let seconds = Math.floor(diff%60);
+                 diff = diff /60;
+                 let minutes = Math.floor(diff % 60 );
+                 diff = diff / 60;
+                 let hours = Math.floor(diff%24);
+                 diff = diff /24;
+                 let days = Math.floor(diff);
+
+                 let outStr = "내년도 신정까지 "+days+"일, "+hours+"시간, "+minutes;
+                 outStr+='분, '+seconds+"초"+"남았읍니다.";
+                 document.getElementById('remaining').innerHTML=outStr;
+                 //1 초가 지나면 다시 함수를 호출한다.
+                 setTimeout("datesUntilNewYear()",1000);
+              }
+              datesUntilNewYear();
+        </script>
+    </body>
+</html>

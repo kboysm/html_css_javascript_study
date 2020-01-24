@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>car</title>
+    </head>
+    <body>
+        <script>
+            function Car(model,speed,color){
+                this.model=model;
+                this.speed=speed;
+                this.color=color;
+
+                this.brake = function(){
+                    this.speed -=10;
+                }
+                this.accel = function(){
+                    this.speed +=10;
+                }
+            }
+            myCar = new Car("520d",60,"red");
+            document.write("모델: "+myCar.model+" 속도 : "+myCar.speed+"<br>");
+            myCar.accel();
+            document.write("모델: "+myCar.model+" 속도 : "+myCar.speed+"<br>");
+            myCar.brake();
+            document.write("모델: "+myCar.model+" 속도 : "+myCar.speed+"<br>");
+        /*
+        생성자를 만들어 놓으면 객체를 생성시에 그 객체를 따로 정의 하지 않아도 생성자에서 정의된 메서드와 맴버 변수들을 사용할 수 있다.
+        */
+        </script>
+        
+    </body>
+</html>

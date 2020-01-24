@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>prototype</title>
+    </head>
+    <body>
+        <script>
+        //자바스크립트의 모든 객체는 prototype이라는 숨겨진 객체를 가지고 있고 그 객체를 이용해서 공유되는 속성,메서드를 작성할 수 있다.
+        function Point(xpos,ypos){
+            this.x=xpos;
+            this.y=ypos;
+        }
+        Point.prototype.getDistance = function(p){
+            return Math.sqrt(this.x*this.x +this.y*this.y);
+        }
+        Point.prototype.Own="lsm";
+        
+        let p1 = new Point(10,20);
+        let d1 = p1.getDistance();
+        let p2 = new Point(10,30);
+        let d2 = p2.getDistance();
+        document.write(d1+"/"+p1.Own+"<br>");
+        document.write(d2+"/"+p2.Own+"<br>");
+        //
+        </script>
+    </body>
+</html>

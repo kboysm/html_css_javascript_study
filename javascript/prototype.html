@@ -14,14 +14,22 @@
             return Math.sqrt(this.x*this.x +this.y*this.y);
         }
         Point.prototype.Own="lsm";
-        
+
         let p1 = new Point(10,20);
         let d1 = p1.getDistance();
         let p2 = new Point(10,30);
         let d2 = p2.getDistance();
         document.write(d1+"/"+p1.Own+"<br>");
         document.write(d2+"/"+p2.Own+"<br>");
-        //
+        document.write(p1.getDistance().toString());
+        /* prototype chain
+            인스턴스 객체를 먼저 찾고 인스턴스.prototype을 찾은 뒤 없으면 object.prototype에 가서 찾는다 toString은 object.prototype에 있다.
+        */
+        p1.toString = function(){
+            return "새로 생성된 객체";
+        }//오버라이딩
+        document.write(p1.toString())
+        
         </script>
     </body>
-</html>
+</html> 

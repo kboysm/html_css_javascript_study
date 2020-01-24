@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Date</title>
+    </head>
+    <body>
+        구입날짜 : 
+        <input type="date" id="pdate">
+        <button onclick="checkDate()">검사</button>
+        <script>
+            // let today = new Date();
+            // document.write(today.toDateString()+"<br>");
+            // document.write(today.toISOString() +"<br>");
+            // document.write(today.toJSON() +"<br>");
+            // document.write(today.toLocaleDateString() +"<br>");
+            // document.write(today.toLocaleTimeString() +"<br>");
+            // document.write(today.toLocaleString() +"<br>");
+            // document.write(today.toString() +"<br>");
+            // document.write(today.toTimeString() +"<br>");
+            // document.write(today.toUTCString() +"<br>");
+            function checkDate(){
+                let s = document.getElementById("pdate").value;
+                let pdate = new Date(s);
+                let today = new Date();
+                let diff = today.getTime() - pdate.getTime();
+                document.write(diff + "<Br>");
+                let days = Math.floor(diff / (1000* 60 * 60 * 24));
+                document.write(days);
+                if(days >30){
+                    alert("교환 기한이 지났습니다.");
+                }
+                // document.write 를 하면 기존의 화면이 지워진다
+                //이유 :html 페이지가 완전히 로드된 후에 호출하게 되면 기존의 html 문서의 내용을 모두 지우고 다시 쓴다. 따라서 기존의 내용이 없어지게 된다.
+            }
+        </script>
+    </body>
+</html>

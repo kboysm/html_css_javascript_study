@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>method</title>
+    </head>
+    <body>
+        <script>
+            let x= [1,2,3];
+            let y= [4,5,6];
+            let joined = x.concat(y);
+
+            document.writeln(x);
+            document.writeln(joined+"<br>");
+
+            let fruits =["apple","banana","grape"];
+            document.writeln(fruits.indexOf("apple")+"<br>");
+
+            let numbers =[1,2,3,4,5];
+            numbers.push(6);
+            document.write(numbers+"<br>");
+
+            item = numbers.pop();
+            document.write(numbers+"<br>");
+            document.write("item : "+item+"<br>");
+
+            item = numbers.shift();
+            document.write(numbers+"<br>");
+            document.write("item : "+item+"<br>");
+
+            numbers.sort(function(a,b){return b-a});
+            document.write(numbers.splice(0,2)+"<br>");
+            document.write(numbers+"<br>");
+            let s = numbers.join("+");
+            //배열의 요소들을+로 다닥다닥 붙임
+            document.write(s+"<br>");
+
+            let lsm = [30,1,5,8,9,11,17,32];
+            function isBigEnough(value){
+                return (value >=10);
+            }
+            let filterd = lsm.filter(isBigEnough);
+            document.write("필터링 된 배열 : "+filterd);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Number_Object</title>
+    </head>
+    <body>
+        <script>
+            let num = new Number(7); //수치형 객체로 만들어주는 wrapper객체
+
+            /*
+                자바스크립트는 총 6개의 원시타입(primitive type)이 존재 -> String,Number,Boolean,null,undefined,symbol
+                동시에 원시 타입에 대응하는 래퍼 객체가 존재 -> String Number Boolean Symbol
+                래퍼 객체 : 원시 타입을 감싸는 형태로 사용
+
+            */
+            1.234.toString();
+            //수치값에도 메서드를 붙이면 자바스크립트가 자동적으로 숫자에 랩퍼 객체를 감싸서 객체로 만듬
+
+            let s = "This is a test";
+            document.write("Big : "+ s.big() + "<br>");
+            document.write("Small : "+s.small()+"<br>");
+            document.write("Bold: "+s.bold()+"<br>");
+            document.write("Italic: "+s.italics()+"<br>");
+            document.write("Fixed: "+s.fixed()+"<br>");
+            document.write("Strike: "+s.strike()+"<br>");
+            document.write("Fontcolor: "+s.fontcolor()+"<br>");
+            document.write("Fontsize: "+s.fontsize()+"<br>");
+            document.write("Subscript: "+s.sub()+"<br>");
+            document.write("Superscript: "+s.sup()+"<br>");
+            document.write("Link: "+s.link("#")+"<br>");
+        </script>
+    </body>
+</html>

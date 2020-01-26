@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>form_element</title>
+    </head>
+    <body>
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+            <li>List item 4</li>
+            <li>List item 5</li>
+        </ul>   
+        <script>
+            let list = document.getElementsByTagName("ul")[0];
+            let allItem = list.getElementsByTagName("li");
+            //list에 있는 모든 li가 드감
+            for(let i=0, length=allItem.length;i<length;i++){
+                alert(allItem[i].firstChild.data);
+            }
+        </script>
+    </body>
+</html> 

@@ -16,8 +16,9 @@
                     let x = document.getElementById("number").value;
                     if(x=="")throw "입력없음";
                     if(isNaN(x))throw "숫자가 아님";
+                    //isNaN() : 숫자인지 아닌지 검사하는 메서드
                     if(x>solution)throw "너무 큼";
-                    if(x<solution)throw "너무 작음";
+                    if(x<solution)throw "너무 작음"; 
                     if(x ==solution) throw "성공";
                 } catch (error) {
                     let y =document.getElementById("message");

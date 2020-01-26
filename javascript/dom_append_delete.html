@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>dom</title>
+    </head>
+    <body>
+        <div id="target1" style="font: 209x bold;" onclick="addtext('ㅎㅎㅎㅎㅎㅎㅎ')">
+        여기를 클릭하세요
+        </div>
+        <p>-------------------------------------------------------------------------------------------------------</p>
+        <div id="target">
+            <p id="p1">첫 번째 단락</p>
+            <p id="p2">두 번째 단락</p>
+        </div>
+        <button onclick="removeNode()"> 누르세요! </button>
+        <script>
+            function removeNode(){
+                let parent = document.getElementById("target"); //돔 구조상 반드시 부모를 알아야 한다.
+                let child = document.getElementById("p1");
+                parent.removeChild(child);
+            }
+
+            function addtext(t){
+                if(document.createTextNode){
+                    let node = document.createTextNode(t); //노드 생성
+                    document.getElementById("target1").appendChild(node); //노드 추가
+                }
+            }
+        </script>
+    </body>
+</html>

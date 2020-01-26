@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>mouseover</title>
+    </head>
+    <body>
+        <div>
+            sdfsdfsdfsdfsdfsdfsdf
+        </div>
+        <div style="background-color: yellow; width: 200px;" onMouseOver="MouseOver(this)" onmouseout="MouseOut(this)">
+            마우스를 이 요소 위에 이동하세요.
+        </div>
+        <script>
+            function MouseOver(elem){
+                elem.style.border="2px solid red";
+            }
+            function MouseOut(elem){
+                elem.style.border="";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>onchange</title>
+    </head>
+    <body>
+        영어단어 : <input type="text" id="name" onchange="sub()">
+        <p>입력필드를 벗어나면 소문자로 변경됩니다.</p>
+        <script>
+            // onchange 이벤트는 내용이 바뀌고 난 뒤 포커싱을 잃었을 때 발생하는 이벤트!!!
+            function sub(){
+                let x =document.getElementById("name");
+                x.value = x.value.toLowerCase();
+            }
+        </script>
+    </body>
+</html>

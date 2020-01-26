@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>setinterval</title>
+    </head>
+    <body onload="chaneColor()">
+        <div id="target">
+            <p>This is a Text</p>
+        </div>
+        <button onclick="stopTextColor()">중지</button>
+    <script>
+        let id;
+        function chaneColor(){
+            id=setInterval(flashText,500);
+        }
+        function flashText(){
+            let elem = document.getElementById("target");
+            elem.style.color = (elem.style.color =="red") ? "blue" : "red";
+            elem.style.backgroundColor = (elem.style.backgroundColor == "green") ? "yellow" : "green";
+        }
+        function stopTextColor(){
+            clearInterval(id);
+        }
+    </script>
+    </body>
+</html>

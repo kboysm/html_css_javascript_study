@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>move</title>
+    </head>
+    <body>
+        <button onclick="btnUp()">up</button>
+        <button onclick="btnDown()">Down</button>
+        <button onclick="btnLeft()">Left</button>
+        <button onclick="btnRight()">Right</button>
+        <script>
+            let childWindow = window.open('','','width=200px,height=200px');
+            childWindow.document.write('window move');
+
+            childWindow.moveTo(100,100); // x=100 ,y=100 에 위치한다.
+
+            //윈도우 이동할 좌표 - 단위 px
+            //함수 호출할 때 마다 y=-10px씩 이동한다.
+            function btnUp(){
+                childWindow.moveBy(0,-10);
+                childWindow.focus();
+                //focus를 왜 해주나 했더니 버튼을 눌렀을때 childwindow에
+                //focus가 되도록 해준다.
+            }
+            function btnDown(){
+                childWindow.moveBy(0,10);
+                childWindow.focus();
+            }
+            function btnLeft(){
+                childWindow.moveBy(-10,0);
+                childWindow.focus();
+            }
+            function btnRight(){
+                childWindow.moveBy(10,0);
+                childWindow.focus();
+            }
+        </script>
+    </body>
+</html>

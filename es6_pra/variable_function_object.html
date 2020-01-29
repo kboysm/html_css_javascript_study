@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>es6_2강</title>
+    </head>
+    <body>
+        <div id="lsm"></div>
+        <script>
+            //let ,var ,const 를 사용해서 변수를 선언할 수 있다.
+            // const deliveryBoy = function(message,handler){
+            //     handler(message); //handler는 펑션으로 다른 펑션의 아규먼트로 펑션을 넣을 수 있고 이 구조에서는 펑션이라는 아규먼트 펑션이 메세지를 지배하는 구조이다.
+            // }
+            const deliveryBoy = {
+                //key : value 구조
+                name:"limSM",
+                age:28,
+                occupation:{ //오브젝트 안에 오브젝트가 있을 수 있음
+                    title:"Boss",
+                    experience:10
+                },
+                //handlerMessage는 키이고 펑션부터가 값이다. 이 둘을 합쳐서 하나의 field || property라고 한다.
+                //field || property는 오브젝트를 구성하는 컴포넌트(구성품)라고 보면 된다.
+               handlerMessage:function(message,handler){
+                handler(message);
+                },
+                //오브젝트에 있는 요소들을 오브젝트 내에서 호출할 때
+                receive : function(){
+                    //this 는 자기를 포함하고 있는 스코프까지가 영역
+                    this.handlerMessage("hello",(message) =>{
+                        console.log(message + this.name)
+                    })
+                }
+            }
+          document.write(deliveryBoy.name+"&nbsp;"); //dot 노테이션으로 호출하거나 아래처럼 호출한다. 
+          document.write(deliveryBoy["name"]+"<br>");
+          //document.write(deliveryBoy.handlerMessage()) 펑션도 똑같고 실행하기 위해서는 ()붙여주면 된다.
+        </script>
+    </body>
+</html>

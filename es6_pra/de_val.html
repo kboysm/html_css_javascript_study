@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>defalut argument</title>
+    </head>
+    <body>
+        <script>
+            let a =20;
+            function isEqualTo(number=20 , compare=a/2){
+                //이런식으로 함수를 선언할 때 기본 디폴트 값을 줄 수 있다.
+                /*
+                    굉장히 중요한 점!!
+                    default값을 number=compare하면 에러 발생!!
+                    이유 : 컴퓨터는 왼쪽에서 오른쪽으로 읽는데 number의 디폴트 값을 넣을 때 compare을 거치지 않아 값을 알 수 없기 때문에 에러 발생
+
+                    defalult값을 compare =number 해주면 에러가 발생 x
+
+
+                */
+                console.log(number);
+                console.log(compare);
+                
+                return number === compare;
+            }
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            let name ="LSM";
+            let age =30; 
+
+            let obj ={
+                //field ,properties = key + value
+                //name :"SuperMan",
+                //name:name,
+                //age:age
+                // name,
+                // age,
+                "name":name,
+                // greet:function(){
+                //     console.log('hello');
+                // }
+                "greet"(){
+                    console.log('hello');
+                }
+            };
+            obj["greet"]();
+           // console.log(obj.greet());
+
+           /*
+            object의 요소 중 ""로 감싸져있는 녀석은 object의 name[""]으로 호출
+            name:name으로 하고 obj["name"]으로 호출 가능 , 그러나 "name":"aaa"로 선언된 녀석을 obj.name으로 호출하면 에러
+           */
+        </script>
+    </body>
+</html>

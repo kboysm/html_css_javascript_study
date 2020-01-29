@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>func_load</title>
+    </head>
+    <body>
+        <button>Test</button>
+        <script>
+            // function add(a,d){
+            //     return a+b;
+            // } 이녀석을 아래와 같이 변수에 담을 수 있음
+            const add =function (a,b){
+                return a+b;
+            } 
+            //const add = (a,b) => a+b; 도 가능 아규멘트가 1개일 경우 : a => a+5;이런식으로도 가능
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //우리가 일반적으로 쓰는 function과 fat arrow function 의 결정적 차이 : this를 다루는 방식
+            window.onload =function(){
+            let button = document.querySelector('button');
+
+            function fn1(){
+                console.log(this);
+            }//버튼이 눌렸을때 this를 결정
+
+            let fn2 = () => console.log(this); //컴퓨터가 이 코드를 읽을 때 this를 결정(윈도우 상황)
+
+            button.addEventListener('click',fn1);
+            }
+            
+        </script>
+    </body>
+</html>

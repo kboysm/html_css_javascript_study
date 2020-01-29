@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>es6_let,var,const</title>
+    </head>
+    <body>
+        <script>
+            var lsm = "test";
+            {
+                var lsm ="Practice";
+            }
+            console.log(lsm);
+            //우리 생각에는 test가 나와야 하지만 Practice가 나옴. let은 스코프를 잘 지키지만 var는 잘 안지킴
+            //예외가 있다면 function안에 있다면 let과 var는 둘 다 스코프를 지킴ㅁ
+
+            const name = "ann";
+            //name = "asian";
+            //console.log(name); 에러 발생 , 정수와 스트링은 이러함
+            const age =[15,20,30];
+            //일반적으로 const는 변할 수 없는 값으로 생각하지만 어레이와 오브젝트를 넣을 경우는 완전히 달라진다.
+            age.push(35);
+            console.log(age);
+            
+            const obj = {
+                key:'lsm',
+                occupation:'coder'
+            }
+            obj.key = 'SuperMan';
+            console.log(obj);
+            //const로 배열,오브젝트의 값을 변경시키거나 추가하는것은 다 가능하다.
+            const obj2 ={};
+            //obj =obj2; 에러발생!
+            /*const는 특정 메모리 영역의 주소를 가르키고 있다
+            그래서 배열이나 오브젝트 내에 요소를 넣거나 삭제 변경하여도 특정 메모리의 주소는 변함이 없다.
+            그러나 obj=obj2는 obj2의 주소를 obj에 넣는다는 의미로 이렇게 하는것을 방지하는것이 const이다!
+            */
+        </script>
+    </body>
+</html>

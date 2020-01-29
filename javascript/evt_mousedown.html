@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>mousedown</title>
+    </head>
+    <body>
+        <button onmousedown="OnBtnDown(this)" onmouseup="OnBtnUp(this)">눌러보시오</button>
+        <script>
+            function OnBtnDown(b){
+                b.style.color = "#ff0000";
+            }
+            function OnBtnUp(b){
+                b.style.color= "#000000";
+            }
+        </script>
+    </body>
+</html>

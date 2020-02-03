@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    ()는 그룹을 의미 , \w는 문자를 의미 , +는 수량자로 하나 이상을 의미 ,\s는 공백을 의미한다.
+    <script>
+        let Rex = /(\w+)\s(\w+)/;
+        let str = "coding everybody";
+        let result = str.replace(Rex,"$2, $1");// $2는 두번째 괄호를 의미 하고 $1은 첫번째 괄호를 의미
+        console.log(result);
+
+        let urlPattern = /\b(?:https?):\/\/[a-z0-9-_&@#\/%?=~_|!:,.;]*/gim;
+        let content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다.';
+        let result2 = content.replace(urlPattern,(url)=>{
+            return '<a href="'+url+'">'+url+'</a>';
+        });
+        console.log(result2);
+    </script>
+</body>
+</html>

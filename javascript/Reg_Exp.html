@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>정규식</h1>
+    <div>
+    컴파일 -> 패턴(대상)을 찾는 것 <br>
+    실행 -> 패턴(대상)에 대해서 구체적인 작업을 하는 것
+    정규 표현식은 주로 추출할 때 사용하거나 , 어떠한 문제를 테스트할 때 사용하고 어떤 정보를 다른 정보로 치환할 때 사용한다
+    .은 하나의 문자를 의미한다.
+    </div>    
+<script>
+    //정규 표현식 리터럴
+    let Pattern = /a./;
+    let pat = new RegExp('a');
+    //위와 아래는 ==로 같다 , exec 는 정규효현식이 찾고자하는 문자를 첫번째 인자로 전달하고 그것이 있다면 배열로 리턴하는 메서드이다 / 주로 추출!!
+    console.log(Pattern.exec('abcde')); // return ab
+    console.log(Pattern.exec('bcdef')); // return null
+    console.log(Pattern.test('abcde')); // 검색이 대상이 되는 인자값이 해당 패턴과 맞는지 않맞는지 true ,false를 리턴 / 주로 있는지 없는지를 테스트!!
+    console.log(Pattern.test('bcde')); // false
+    
+</script>
+</body>
+</html>

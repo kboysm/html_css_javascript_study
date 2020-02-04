@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func0(){
+            if(window === this){
+                document.write("window === this<br>");
+            }
+        }
+        func0(); //window.이 생략되어 있다.
+        let lsm = {
+             func : function(){
+                 if(lsm === this){
+                 document.write("lsm === this<br>");
+             }}
+        }
+        lsm.func();
+
+        let funcThis = null;
+
+        function Func(){
+            funcThis = this;
+        }
+        let o1 = Func();
+        if(funcThis === window){
+            document.write("window <br>");
+        }
+        let o2 =new Func();
+        if(funcThis === o2){
+            document.write("o2 <br>");
+        }
+        let o ={}
+        let p ={}
+        function FUNC(){
+            switch(this){
+                case o:
+                    document.write("o <br>");
+                    break;
+                case p:
+                    document.write("p <br>");
+                    break;
+                case window:
+                    document.write("window <br>");
+                    break;
+                
+            }
+        }
+        //this 제어하기
+        FUNC();
+        FUNC.apply(o);
+        FUNC.apply(p);
+    </script>
+</body>
+</html>

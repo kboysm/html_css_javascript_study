@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    sum.apply(o1)을 해주면
+    function sum()은 o1.sum이 된다
+    또 함수안에서 내부적으로 var this = o1;이 된다.
+    <script>
+        o1 = {let1:1,let2:2,let3:3};
+        o2 = {v1:10,v2:50,v3:100,v4:25};
+        function sum(){
+            let _sum = 0;
+            for(name in this){
+                _sum += this[name];
+            }
+            return _sum;
+        }
+        console.log(sum.apply(o1));
+        console.log(sum.apply(o2));
+    </script>
+</body>
+</html>

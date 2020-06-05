@@ -1,4 +1,4 @@
-html_css_javascript 복습 
+html_css_javascript 복습
 
 ## css는 readme.md파일에 공부한 것을 정리하기로 결정
 
@@ -18,7 +18,7 @@ height: 100vh -> 부모에 상관없이 높이100%를 다 쓰겠다는 의미
 
 ## Flexbox : css의 꽃
 
-flexbox는 2가지만 이해하면 금방 배움 
+flexbox는 2가지만 이해하면 금방 배움
 
 1.container(박스에 들어가는 속성) & item(아이템에 들어가는 속성)
 
@@ -47,7 +47,7 @@ justify-content:flex-end는 아이템의 순서는 유지하고 오른쪽으로 
 justify-content:center; // 아이템을 가운데 정렬
 justify-content:space-around; // container의 아이템들의 각각마다 공간을 주어 배치,맨 처음과 맨 마지막은 조금 좁음
 justify-content:space-evenly; // 모든 아이템(처음과 끝 포함)의 간격을 모두 동일하게 해줌
-justify-content:space-betwwen; // 맨처음과 마지막 아이템은 화면에 딱 맞게 붙이고 나머지 아이템들의 간격을 동일하게 설정해줌 
+justify-content:space-betwwen; // 맨처음과 마지막 아이템은 화면에 딱 맞게 붙이고 나머지 아이템들의 간격을 동일하게 설정해줌
 align-items:center; // 아이템들을 수직적으로 정렬할 때 사용,아이템들을 수직적으로 정 중앙부터 배치
 align-items: baseline; // text를 기준으로 아이템들을 정렬(아이템들의 크기가 다를 때 사용)
 align-content:space-between; // 위에 아이템들은 top에 딱 붙고 아래 아이템들은 bottom에 딱 붙고 중간에 아이템과 위 아래의 아이탬에 일정한 간격을 줌
@@ -67,9 +67,10 @@ order:0; //기본값,order의 숫자를 통해서 아이템의 순서를 지정�
 ex) 1 2 3이라면 3 2 1로 바꿀 수 있음  //각각의 아이템 order를 지정해주면 됌
 하지만 잘 사용하진 않음,이런게 있다 정도는 알고 있어야 함
 flex-grow:1; 을 주게 되면 container의 크기에 따라 아이템의width가 바뀌어 margin없이 container의 width를 채움
-flex-shrink:2; // 다른 아이템들이 container의 크기가 줄어들때 크기가 줄어드는 것보다 2배 더 줄어들라는 의미 
+flex-shrink:2; // 다른 아이템들이 container의 크기가 줄어들때 크기가 줄어드는 것보다 2배 더 줄어들라는 의미
 flex-basis:auto; //기본값 grow나 shrink의 맞춰서 변형
 flex-basis:50%로 지정하면 이 아이템이 container의 width를 50%차지 하고 나머지 아이템들이 50%를 차지하게 함
 align-self:center;를 지정하면 해당 아이템만 align-content:center의 효과를 나타나게 함
 ```
+
 flexbox연습 사이트 : https://flexboxfroggy.com/ 40분 정도 걸린거같음 클리어!

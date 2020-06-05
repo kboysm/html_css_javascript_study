@@ -74,3 +74,59 @@ align-self:center;를 지정하면 해당 아이템만 align-content:center의 �
 ```
 
 flexbox연습 사이트 : https://flexboxfroggy.com/ 40분 정도 걸린거같음 클리어!
+
+## Emmet 연습
+
+사이트 : https://emmet.io/
+! + tab : html의 기본형식이 자동으로 완성
+
+.lsm + tab의 결과
+
+```
+<div class="lsm></div>
+//div는 가장 기초적인 아이로 클래스 네임이나 id를 주면 자동으로 div로 설정됨
+```
+
+div>(header>ul>li\*2>a)+footer>p의 결과
+
+```
+<div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+```
+
+p{hello}의 결과
+
+```
+<p>hello</p>
+```
+
+자동으로 숫자를 할당하기
+
+p.class${item $}\*5의 결과
+
+```
+<p class="class1">item 1</p>
+<p class="class2">item 2</p>
+<p class="class3">item 3</p>
+<p class="class4">item 4</p>
+<p class="class5">item 5</p>
+```
+
+더미용 텍스트 만들기
+
+p>lorem 의 결과 , p>lorem4(4개의 단어만 입력하라는 뜻)의 결과
+
+```
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deleniti voluptatibus consequatur eaque, officia non alias eum optio voluptatum incidunt impedit perspiciatis ea dolorem itaque cumque nostrum maiores reprehenderit rerum?</p>
+
+<p>Lorem ipsum dolor sit.</p>
+```

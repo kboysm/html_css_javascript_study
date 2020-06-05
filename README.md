@@ -78,6 +78,7 @@ flexbox연습 사이트 : https://flexboxfroggy.com/ 40분 정도 걸린거같�
 ## Emmet 연습
 
 사이트 : https://emmet.io/
+
 ! + tab : html의 기본형식이 자동으로 완성
 
 .lsm + tab의 결과
@@ -130,3 +131,11 @@ p>lorem 의 결과 , p>lorem4(4개의 단어만 입력하라는 뜻)의 결과
 
 <p>Lorem ipsum dolor sit.</p>
 ```
+
+## 반응형 웹사이트 이론
+
+웹 사이트에 접속하는 디바이스 또 화면의 크기마다 다르게 화면을 배치하는 기술로 주로 media query를 사용
+
+min-width ,max-width정도는 알고 가야함
+
+자세한 사항은 mdn사이트에서 media query로 검색하여 찾아가며 공부하기!

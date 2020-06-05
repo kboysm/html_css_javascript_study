@@ -139,3 +139,21 @@ p>lorem 의 결과 , p>lorem4(4개의 단어만 입력하라는 뜻)의 결과
 min-width ,max-width정도는 알고 가야함
 
 자세한 사항은 mdn사이트에서 media query로 검색하여 찾아가며 공부하기!
+
+## googlefont 사용
+
+https://fonts.google.com/ 접속 후 검색 embed의 코드를 복사 하여 index.html head부분에 붙여넣기
+
+## css 변수 사용
+
+```
+:root {
+  --text-color: #f0f4f5;
+  --background-color: #263343;
+  --accent-color: #d49466;
+} 최상단에 선언 후
+
+쓰고 싶은 곳에서
+var(--text-color) , var(--background-color) , var(--accent-color)를 사용하여 꺼내어 쓴다.
+장점으로 한곳만 수정하면 사용하는 여러곳이 수정된다.
+```

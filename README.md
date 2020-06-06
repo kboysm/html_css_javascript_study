@@ -157,3 +157,17 @@ https://fonts.google.com/ 접속 후 검색 embed의 코드를 복사 하여 ind
 var(--text-color) , var(--background-color) , var(--accent-color)를 사용하여 꺼내어 쓴다.
 장점으로 한곳만 수정하면 사용하는 여러곳이 수정된다.
 ```
+
+### css line clamp
+
+```
+ex)2줄만 보이게 하고 나머지는 안보이게 하는 기술
+mdn예제
+p {
+  width: 300px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+```

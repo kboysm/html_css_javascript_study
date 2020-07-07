@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transition</title>
+    <style type="text/css">
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #000;
+            transition: cubic-bezier(0.01, 0.53, 1, 2.21) 0.5s;
+            /* transition: 0.5s; */
+        }
+
+        .item:hover {
+            transform: scale(1.5);
+            width: 150px;
+            background: rgba(99, 224, 155, 0.7);
+            z-index: 10;
+        }
+
+        .A {
+            z-index: 1;
+        }
+
+        .B {
+            z-index: 2;
+            margin-left: -70px;
+        }
+
+        .C {
+            z-index: 3;
+            margin-left: -70px;
+
+        }
+
+        .D {
+            z-index: 4;
+            margin-left: -70px;
+
+        }
+
+        .E {
+            z-index: 5;
+            margin-left: -70px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>카드가 겹치게 만든 후 transtion 적용해보기 </h1>
+    <p>장바구니에서 겹치는 카드로 상품목록을 만들었는데. 이렇게 만들면 공간효율성을 높일 수 있을거 같다.</p>
+    <div class="container">
+        <div class="item A">A</div>
+        <div class="item B">B</div>
+        <div class="item C">C</div>
+        <div class="item D">D</div>
+        <div class="item E">E</div>
+    </div>
+
+
+</body>
+
+</html>

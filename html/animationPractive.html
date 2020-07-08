@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation</title>
+    <style type="text/css">
+        @keyframes lsm {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            10% {
+                transform: translate(0px, 200px);
+            }
+
+            20% {
+                transform: translate(200px, 200px);
+            }
+
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item {
+            height: 25px;
+            border: 1px solid black;
+            border-radius: 10px;
+            animation: lsm 5s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> animation 연습하기</h1>
+    <div class="container">
+        <p class="item">p</p>
+    </div>
+
+</body>
+
+</html>

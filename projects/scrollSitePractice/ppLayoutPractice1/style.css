@@ -7,7 +7,6 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #f8f8f8;
     
 }
 
@@ -102,9 +101,10 @@ h1 span {
 }
 
 .one {
+    opacity: 0;
     background-color: #fe4365;
     z-index:1;
-    
+
   
 }
 

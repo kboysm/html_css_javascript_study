@@ -118,6 +118,8 @@ h1 span {
 
 .four {
     background-color: #c8c8a9;
+    display: flex;
+    justify-content: center;
 }
 @media screen and (max-width: 768px) { 
     #pinContainer {

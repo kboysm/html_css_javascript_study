@@ -104,7 +104,9 @@ h1 span {
     opacity: 0;
     background-color: #fe4365;
     z-index:1;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
 }
 

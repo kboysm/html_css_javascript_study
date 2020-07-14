@@ -22,4 +22,30 @@ const moveCards = (isNext) => {
 
 prev.onclick = () => moveCards(false);
 next.onclick = () => moveCards(true);
-prev.classList.add('disabled');
+prev.classList.add('disabledSecond');
+
+const prevSecond = document.querySelector('.arrowSecond.prevSecond');
+const nextSecond = document.querySelector('.arrowSecond.nextSecond');
+const moveCardsSecond = (isNext) => {
+    let current = document.querySelector('.currentSecond'),
+        newCurrent = isNext ? current.nextElementSibling : current.previousElementSibling;
+
+    if (newCurrent) {
+        current.classList.remove('currentSecond');
+        newCurrent.classList.add('currentSecond');
+
+        if (isNext && newCurrent.nextElementSibling == null) {
+            nextSecond.classList.add('disabledSecond');
+        }
+        else if (!isNext && newCurrent.previousElementSibling == null) {
+            prevSecond.classList.add('disabledSecond');
+        } else {
+            prevSecond.classList.remove('disabledSecond');
+            nextSecond.classList.remove('disabledSecond');
+        }
+    }
+};
+
+prevSecond.onclick = () => moveCardsSecond(false);
+nextSecond.onclick = () => moveCardsSecond(true);
+prevSecond.classList.add('disabledSecond');

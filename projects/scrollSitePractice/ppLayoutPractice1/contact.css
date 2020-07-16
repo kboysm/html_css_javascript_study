@@ -48,7 +48,12 @@
   float:left;
   overflow:visible;
 }
-
+.cardhd{
+  background:#E8EAF6;
+  font-size:24px;
+  color:#000000;
+  overflow:visible;
+}
 .cardrg{
     display:grid;
   height:200px;

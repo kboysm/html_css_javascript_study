@@ -66,57 +66,14 @@ margin: 25px;
         padding: 10px;
         font-size: 11pt;
         margin: 5px;
+        text-align: left;
     }
     
-    .button-facebook,
-    .button-instagram,
-    .button-twitter,
-    .button-whatsapp {
+    .button-github
+    {
         padding: 5px;
         font-size: 30pt;
     }
-    .button-facebook {
-        color: #3C5A99;
+    .button-github {
+        color: #000000;
     }
-    .button-instagram {
-      color: #893dc2;
-    }
-    .button-twitter {
-        color: #1DA1F2;
-    }
-    .button-whatsapp {
-        color: #4AC959;
-    }
-    
-    #rating-stars {
-        margin: 4px;
-    }
-    
-    #rating-stars .stars {
-        display: inline-flex;
-      }
-      #rarate-input {
-        pointer-events: none;
-      }
-      #rating-stars .rate-input {
-        position: absolute;
-        left: -9999px;
-      }
-      #rating-stars label {
-        cursor: pointer;
-        padding: 1px;
-        font-size: 20pt;
-      }
-      #rating-stars .star-icon {
-        color: orange;
-      }
-    
-      #rating-stars .rate-input:checked ~ .star-label .star-icon {
-        color: #999;
-      }
-      #rating-stars .stars:hover .star-label .star-icon {
-        color: orange;
-      }
-      #rating-stars .rate-input:hover ~ .star-label .star-icon {
-        color: #999;
-      }

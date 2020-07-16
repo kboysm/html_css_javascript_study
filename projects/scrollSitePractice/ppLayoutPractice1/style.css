@@ -102,9 +102,9 @@ h1 span {
 }
 
 .one {
-    opacity: 0;
     background-color: #fe4365;
-    z-index:1;
+    z-index:9999;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;

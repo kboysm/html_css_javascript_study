@@ -2,8 +2,8 @@
 
     let controller = new ScrollMagic.Controller();
     let sectionOneOpacity = document.querySelector('.one');
-
     let wipeAnimation = new TimelineMax()
+
         // animate to second
         .to("#slideContainer", 1, { z: -500, opacity: 0, ease: Linear.ease })
         .to("#slideContainer", 1, { x: "-25%" })

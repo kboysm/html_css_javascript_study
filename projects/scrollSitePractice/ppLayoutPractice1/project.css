@@ -1,3 +1,32 @@
+@keyframes gitBtnAnimation {
+  0% {
+      transform: rotate(45deg);
+  }
+  25% {
+      transform: rotate(0deg);
+  }
+  50%{
+      transform: rotate(-45deg);
+  }
+  75% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(45deg);
+  }
+}
+
+@keyframes gitBtnHover {
+  0%{
+    transform: scale(0,0);
+  }
+  50%{
+    transform: scale(1.5,1.5);
+  }
+  100%{
+    transform: scale(0,0);
+  }
+}
 
 .positionSticky {
   position: -webkit-sticky;
@@ -90,8 +119,8 @@ ul.cards {
 }
 ul.cards li {
   position: absolute;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
+  width: calc(100% - 80px);
+  height: calc(100% - 100px);
   max-width: 800px;
   max-height: 600px;
   z-index: 3;
@@ -160,6 +189,16 @@ ul.cards li.clean {
   font-size: 24px;
   color: #000000;
 }
+ul.cards li.clean a i {
+  animation-name:gitBtnAnimation ;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+ul.cards li.clean a i:hover {
+
+  animation:none;
+  transform: scale(1.5,1.5);
+}
 ul.cards li.current {
   z-index: 2;
   -webkit-transform: translateX(0) rotate(-3deg);
@@ -187,7 +226,7 @@ ul.cards li i {
   font-size: 96px;
 }
 button.arrow {
-  position: absolute;
+  position: fixed;
   height: 10%;
   top: 0;
   border: 0;
@@ -200,7 +239,6 @@ button.arrow {
   z-index: 3;
   cursor: pointer;
   outline: none;
-  
   /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); */
 }
 button.arrow,
@@ -226,7 +264,6 @@ button.arrow:after {
 }
 button.arrow.prev {
   left: 25%;
-
 }
 
 button.arrow.prev:after {
@@ -290,8 +327,8 @@ ul.cardsSecond {
 }
 ul.cardsSecond li {
   position: absolute;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
+  width: calc(100% - 80px);
+  height: calc(100% - 100px);
   max-width: 800px;
   max-height: 600px;
   z-index: 3;
@@ -359,6 +396,16 @@ ul.cardsSecond li.cleanSecond {
   padding: 0 40px;
   font-size: 24px;
   color: #000000;
+}
+ul.cardsSecond li.cleanSecond a i {
+  animation-name:gitBtnAnimation ;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+ul.cardsSecond li.cleanSecond a i:hover {
+
+  animation:none;
+  transform: scale(1.5,1.5);
 }
 ul.cardsSecond li.currentSecond {
   z-index: 2;
@@ -460,6 +507,12 @@ button.arrowSecond:focus:not(.disabledSecond):after {
     content: '<';
   }
   button.arrow.next:after {
+    content: '>';
+  }
+  button.arrowSecond.prevSecond:after {
+    content: '<';
+  }
+  button.arrowSecond.nextSecond:after {
     content: '>';
   }
 }

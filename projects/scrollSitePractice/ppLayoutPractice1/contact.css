@@ -1,178 +1,112 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Questrial&display=swap');
-
-
-.in{
-  height:100px;
-}
-.card{
-  background:white;
-  display:block;
-  margin:auto;
-  box-shadow:1px 1px 30px black;
-  height:350px;
-
-  width:500px;
-  border-radius:10px;
-  opacity: 100;
-   opacity: 1;
-  animation: fadein 1s linear;
+.wrapper {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
 }
 
 
-@keyframes fadein {
-  0%,100% { opacity: 0 }
-  100% { opacity: 1 }
-}
-
-.cardhd{
-  padding:25px;
-  margin:0px;
-}
-
-
-.text{
-  font-family: 'Questrial', sans-serif;
-  width:25px;
-  background:#ffcdd2;
-  font-size:13px;
-  display:grid;
-  float:right;
-  margin-right:50px;
-}
-
-.cardlf{
-  background:#E8EAF6;
-  display:grid;
-  height:200px;
-  width:150px;
-  float:left;
-  overflow:visible;
-}
-.cardhd{
-  background:#E8EAF6;
-  font-size:24px;
-  color:#000000;
-  overflow:visible;
-}
-.cardrg{
-    display:grid;
-  height:200px;
-  width:250px;
-  float:right;
-}
-
-.lt{
-  margin-bottom:20px;
-margin-right:10px;
-}
-
-.txt{
-
-  margin-top:10px;
-  margin-left:30px;
-  font-size:15px;
-  color:#303F9F;
-}
-
-.btn{
-  float:right;
-  margin-right:20px;
-  margin-top:40px;
-  background:#303F9F;
-  border:none; 
-  color:#fff;
-  padding:10px;
-  font-family: 'Questrial', sans-serif;
-  transition: all 0.2s;
-}
-
-.btn:hover{
-   cursor:pointer;
-   background:#1A237E; 
-}
-
-.btn1{
-  display:none;
-  margin-right:20px;
-  margin-top:40px;
-  background:#d32f2f;
-  border:none; 
-  color:#fff;
-  padding:10px;
-  font-family: 'Questrial', sans-serif;
-  transition: all 0.2s;
-  float:right;
-  outline:none;
-}
-
-.btn1:hover{
-   cursor:pointer;
-   background:#b71c1c; 
-}
-
-.text1{
-  font-family: 'Questrial', sans-serif;
-  width:25px;
-  background:#B3E5FC;
-  font-size:13px;
-  display:grid;
-  float:right;
-  margin-right:50px;
+@keyframes boxContentAnimation {
+  0% {
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  }
+  50%{
+    transform: translateX(-10px) rotateY(-25deg) rotateX(-10deg);
+  }
+  100%{
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  }
 }
 
 
-.cardlf1{
-  background:#ffcdd2;
-  display:none;
-  height:200px;
-  width:200px;
-  float:left;
-  overflow:visible;
+.card {
+  grid-area: 1 / 1;
+  height: 200px;
+  width: 400px;
+  /* transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+   */
+   animation: boxContentAnimation 3s infinite;
+  background: rgba(249, 198, 26, 0.88);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  color: #000;
+  /* text-transform: uppercase; */
+  font-size: 60px;
+  font-weight: 900;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
 }
 
-.cardrg1{
-  display:none;
-  height:200px;
-  width:250px;
-  float:right;
+.wrapper h1 {
+  font-size: 15px;
+  font-weight: 900;
+ 
+}
+.wrapper h1 p {
+  color: #000000;
+}
+.card .enclosed {
+  font-size: 45px;
+  background: #000;
+  line-height: 1;
+  color: rgba(249, 198, 26, 1);
+  padding: 0 5px;
+  display: inline-block;
+  transform: translate(-1px, 1px) scale(0.75);
+  transform-origin: right center;
 }
 
-#icon{
-  color:#303F9F;
-  font-size:30px;
-  display:block;
-  margin-top:40px;
-  margin-left:10px;
-  float:left;
+@keyframes boxBorderAnimation {
+  0% {
+    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  }
+  50%{
+    transform: translateX(60px) rotateY(30deg) rotateX(-15deg) scale(1.03);
+  }
+  100%{
+    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  }
 }
 
-.text2{ 
-  font-family: 'Questrial', sans-serif;
-  width:22px;
-  background:#E1BEE7;
-  font-size:13px;
-  display:grid;
-  margin-top:49px;
-  margin-left:5px;
-  float:left;
+.wrapper:before {
+  --bw: 9px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  /* transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03); */
+  animation: boxBorderAnimation 3s infinite;
+  pointer-events: none;
+  border: var(--bw) solid #000;
+  box-sizing: content-box;
 }
 
-#user{
-  display:none;
+
+
+
+.wrapper:hover > div,
+.wrapper:hover:before {
+  animation: none;
+  
 }
 
-.yazi{
-  font-family: 'Questrial', sans-serif;
-  margin-top:10px;
-  margin-left:40px;
-  font-size:12px;
-  width:150px;
+
+.wrapper > div,
+.wrapper:before {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
 }
 
-.txt1{
-  margin-top:10px;
-  margin-left:30px;
-  font-size:20px;
-  font-family: 'Montserrat Subrayada', sans-serif;
-  color:#303F9F;
+@media all and (max-width: 800px) {
+  .card {
+
+  width: 300px;
+  }
+
 }

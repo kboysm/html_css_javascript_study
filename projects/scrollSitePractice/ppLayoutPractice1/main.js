@@ -2,8 +2,8 @@
 
     let controller = new ScrollMagic.Controller();
     let sectionOneOpacity = document.querySelector('.one');
-    let wipeAnimation = new TimelineMax()
 
+    let wipeAnimation = new TimelineMax()
         // animate to second
         .to("#slideContainer", 1, { z: -500, opacity: 0, ease: Linear.ease })
         .to("#slideContainer", 1, { x: "-25%" })
@@ -20,10 +20,11 @@
 
     let scene = new ScrollMagic.Scene({
         triggerElement: "#pinContainer",
-        triggerHook: "onLeave",
+        triggerHook: 0,
         duration: "200%" //이 값이 클 수록 천천히 덮어씀
-    }).setTween(".one", 1, { opacity: 0 }) // trigger a TweenMax.to tween
+    })
         .setPin("#pinContainer")
+        .setTween(".one", 1, { opacity: 0 }) // trigger a TweenMax.to tween
         .setTween(wipeAnimation)
         .addIndicators()
         .addTo(controller);
@@ -31,6 +32,7 @@
     setTimeout(() => {
         sectionOneOpacity.style.opacity = 1;
         sectionOneOpacity.style.transition = '.6s';
+
     }, 1000)
 
 

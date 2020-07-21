@@ -1,5 +1,6 @@
 const prev = document.querySelector('.arrow.prev');
 const next = document.querySelector('.arrow.next');
+
 const moveCards = (isNext) => {
     let current = document.querySelector('.current'),
         newCurrent = isNext ? current.nextElementSibling : current.previousElementSibling;
@@ -49,3 +50,14 @@ const moveCardsSecond = (isNext) => {
 prevSecond.onclick = () => moveCardsSecond(false);
 nextSecond.onclick = () => moveCardsSecond(true);
 prevSecond.classList.add('disabledSecond');
+
+next.style.display = 'none';
+prev.style.display = 'none';
+nextSecond.style.display = 'none';
+prevSecond.style.display = 'none';
+setTimeout(() => {
+    next.style.display = 'block';
+    prev.style.display = 'block';
+    nextSecond.style.display = 'block';
+    prevSecond.style.display = 'block';
+}, 1000)

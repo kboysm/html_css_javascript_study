@@ -100,3 +100,8 @@ margin: 25px;
         animation-duration: 3s;
         animation-iteration-count: infinite;
     }
+    .socialmedia a i:hover {
+
+        animation:none;
+        transform: scale(1.5,1.5);
+      }

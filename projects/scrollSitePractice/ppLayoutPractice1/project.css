@@ -264,10 +264,13 @@ button.arrow:after {
 }
 button.arrow.prev {
   left: 25%;
+
 }
 
 button.arrow.prev:after {
   content: '< Prev';
+
+
 }
 button.arrow.next {
   right: 50%;

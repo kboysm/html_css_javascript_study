@@ -4,7 +4,7 @@ let io = require("socket.io")(server);
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html');
+    res.sendFile(__dirname + '/index.html');
 })
 
 
@@ -46,13 +46,13 @@ io.on('connection', (socket) => {
     });
 
     // force client disconnect from server
-    socket.on('forceDisconnect', () => {
+    socket.on('forceDisconnect', function () {
         socket.disconnect();
     })
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', function () {
         console.log('user disconnected: ' + socket.name);
-    })
+    });
 })
 server.listen(3000, () => {
     console.log('socket IO server listening on port 3000');

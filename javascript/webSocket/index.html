@@ -4,24 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSocket</title>
+    <title>Socket.io Chat Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <h3>Socket.io Chat Example</h3>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="msgForm">Message: </label>
+                <input type="text" class="form-control" id="msgForm">
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <div id="chatLogs"></div>
+    </div>
+
     <script>
-        let ws = new WebSocket("ws://localhost:3000");
+        $(() => {
+            //socket.io 서버에 접속
+            let socket = io();
+            //서버로 자신의 정보를 수신
+            socket.emit('login', {
+                name: makeRandomName(),
+                userid: 'lishal12@abc.com'
+            });
 
-        ws.onopen = (event) => {
-            ws.send("Client Message:Hi !");
-        }
+            socket.on('login', (data) => {
+                $('#chatLogs').append("<div><strong>" + data + "</strong> has joined</div>");
+            });
+            //서버로부터 메시지를 수신하면
+            socket.on('chat', (data) => {
+                $("#chatLogs").append("<div>" + data.msg + " : from<strong>" + data.from.name + "</strong></div>");
+            })
 
-        ws.onmessage = (event) => {
-            console.log("Server message:", event.data);
-        }
+            //send button 클릭시
+            $("form").submit((e) => {
+                e.preventDefault();
+                let $msgForm = $("#msgForm");
 
-        ws.onerror = (event) => {
-            console.log("Server error message: ", event.data);
-        }
+                //서버로 메시지를 전송
+                socket.emit("chat", { msg: $msgForm.val() });
+                $msgForm.val("");
+            })
+
+            function makeRandomName() {
+                let name = "";
+                let possible = "abcdefghijklmnopqrstuvwxyz";
+
+                for (let i = 0; i < 4; i++) {
+                    name += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+                return name;
+            }
+
+        })
     </script>
 </body>
 

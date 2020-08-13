@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let testData = [
+            {
+                name: {
+                    a0: 'a0',
+                    a1: 'a1'
+                },
+                age: {
+                    b0: 'b0',
+                    b1: 'b1'
+                },
+                address: 'asdasd'
+            }
+        ]
+        Object.prototype.getKeyByValue = function (value) {
+            for (var prop in this) {
+                if (this.hasOwnProperty(prop)) {
+                    if (this[prop] === value)
+                        return prop;
+                }
+            }
+        }
+        function arrayToCSV(objArray) {
+            const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+            let str = [];
+            console.log(getKeyByValue(objArray, 'asdasd'))
+            return array.reduce((str, next) => {
+                str.push(Object.values(next).map(value =>
+                    typeof value !== 'object' ? getKeyByValue(value) : JSON.stringify(value)
+                ).join(",")) + '\r\n';
+                return str;
+            }, str);
+        }
+        console.log(arrayToCSV(testData));
+    </script>
+</body>
+
+</html>

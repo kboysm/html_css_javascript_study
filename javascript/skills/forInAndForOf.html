@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = () => {
+
+            let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            testArray.testData = 'testData';
+            console.time('timeKey')
+
+            for (let item in testArray) {
+                console.log(item);
+            }
+            for (let item of testArray) {
+                console.log(item);
+            }
+            console.timeEnd('timeKey')
+
+        }
+    </script>
+</body>
+
+</html>

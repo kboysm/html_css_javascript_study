@@ -22,24 +22,16 @@
                 address: 'asdasd'
             }
         ]
-        Object.prototype.getKeyByValue = function (value) {
-            for (var prop in this) {
-                if (this.hasOwnProperty(prop)) {
-                    if (this[prop] === value)
-                        return prop;
-                }
-            }
-        }
         function arrayToCSV(objArray) {
             const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
-            let str = [];
-            console.log(getKeyByValue(objArray, 'asdasd'))
-            return array.reduce((str, next) => {
-                str.push(Object.values(next).map(value =>
-                    typeof value !== 'object' ? getKeyByValue(value) : JSON.stringify(value)
-                ).join(",")) + '\r\n';
-                return str;
-            }, str);
+            let strKey = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+            let strValu = '';
+            array.reduce((strValu, next) => {
+                strValu += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+                return strValu;
+            }, strValu);
+
+            return strValu;
         }
         console.log(arrayToCSV(testData));
     </script>

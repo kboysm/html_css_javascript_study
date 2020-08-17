@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // window.onload = () => {
+
+        //     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        //     console.time('timeKey')
+        //     let testData = testArray.map(item => {
+        //         console.log(item);
+        //         return item;
+        //     })
+        //     console.timeEnd('timeKey')
+
+        //     console.log('testData : ' + testData);
+        //     console.log('testData type :' + typeof testData)
+        // }
+        window.onload = () => {
+
+            let testData = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            console.time('timeKey')
+            let resultData = testData.reduce((누산기, 현재값, 인덱스) => {
+                console.log(누산기, 현재값, 인덱스);
+                누산기 += 현재값
+                return 누산기;
+            }, 0) // 0은 초기값
+            console.timeEnd('timeKey')
+            console.log(resultData);
+        }
+    </script>
+</body>
+
+</html>

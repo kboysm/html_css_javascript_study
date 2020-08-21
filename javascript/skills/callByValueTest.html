@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let testData = {
+            a: {
+                abc: 'abc',
+                ab: 'ab',
+                ac: {
+                    qwe: 'qwe',
+                    wer: 'wer',
+                    ert: {
+                        rty: 'rty',
+                        tyu: {
+                            cvb: 'cvb'
+                        }
+                    }
+                }
+            }
+        }
+
+        let testData2 = testData.a.ac;
+        console.log(testData.a.ac.qwe);
+        testData2.qwe = 'aaaaaaaaaaaaaaaaa';
+        console.log(testData.a.ac.qwe);
+        //요약: testData의 객체를 다른 변수에 저장할 시 객체의 주소값이 저장되기 때문에 저장당한 변수의 값을 변동할 시 원본의 데이터의 값도 같이 바뀌게 된다.
+        //이를 통해 vue.js generate등으로 v-model을 연결하여 form을 완성할 경우 변수를 컨트롤하기 어렵지만 함수의 결과값을 변수에 저장할 시 해당 변수를 컨트롤 할 수 있게 된다.
+        //이 html 파일은 이를 확인하기 위한 임시 TEST파일이다.
+
+    </script>
+</body>
+
+</html>

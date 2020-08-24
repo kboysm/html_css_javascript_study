@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    zzzzzzzzzzzzzzzz
+    <script>
+        const testData = {
+            a: 'lsm',
+            b: 10,
+            c: undefined,
+            d: null,
+            e: '',
+            f: 0
+        }
+        const resultData = {
+            a: 'qpwoei',
+            b: 9999,
+            c: { t: 'aaa', h: 'pp' },
+            d: 1532,
+            e: 'oooop',
+            f: 10
+        }
+        const lsmTest = {
+            a: 'asdfghjkl'
+        }
+        let returnData = Object.assign(testData, resultData);
+        returnData = Object.assign(resultData, lsmTest);
+        console.log(returnData)
+    </script>
+</body>
+
+</html>

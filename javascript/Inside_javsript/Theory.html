@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>2020-11-15 study_inside_javascript_book</h2>
+    <p>
+        !! -> 의 역할은 피연산자를 불린값으로 변환하는 것 , 객체는 값이 비어 있어도 true를 리턴함 , 1true , 0false
+    </p>
+    <br>
+    <p>
+        function add (a,b){
+        return a+b;
+        }
+        는 add(1,2)로 호출이 가능 그러나
+        let add = function sum(x,y){
+        return x+y;
+        }
+        는 sum(1,2)로 호출이 불가능함 이유는?
+        ->function name으로 선언할 시 내부적으로
+        let name = function name(){}인 함수표현식으로 변경되기 때문이다.
+
+        또한 함수 내부에서는 function의 이름으로 재귀적인 호출이 가능하고 외부에서는 함수를 담는 변수의 이름으로 호출한다.
+    </p>
+    <p>
+        javascript_General_rule : 함수 선언문or리터럴 방식은 세미콜론을 붙이지 않지만 함수 표현식 방식은 붙임
+        자바스크립트의 인터프리터가 자동으로 세미콜론을 붙여줌 강제 사항은 아님 그러나 신경쓰지 않으면 디버깅의 문제로 고생할 확률이 높음</p>
+    <p>
+        함수 호이스팅 : 함수 선언문 형태로 정의한 함수의 유효 범위는 코드의 맨 처음부터 시작
+        함수 표현식으로 사용하면 함수 호이스팅이 적용되지 않아 해당 함수가 아직 선언되지 않았을 경우 언 캐치드 에러 발생
+        때문에 함수 표현식을 권장
+    </p>
+    <p>
+        함수를 선언한 후 프로퍼티를 추가하여 객체 처럼 사용할 수 있다.
+        <bold>
+            함수도 객체이다.
+        </bold>
+    </p>
+
+
+
+
+
+</body>
+
+</html>
